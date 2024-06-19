@@ -6,17 +6,19 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
+from app.models import User, Item
+
 load_dotenv()
 
 # SQLALCHEMY_DATABASE_URL = f'postgresql://{DB_USER}:{DB_PASSWORD}@{DB_SERVER}:{DB_PORT}/{DB_NAME}'
 
 def SQLALCHEMY_DATABASE_URI() -> PostgresDsn:
     return MultiHostUrl.build(
-        scheme='postgresql+psycopg',
+        scheme='postgresql+psycopg2',
         username=os.getenv('POSTGRES_USER'),
         password=os.getenv('POSTGRES_PASSWORD'),
         host=os.getenv('POSTGRES_SERVER'),
-        port=5433,
+        port=5432,
         path=os.getenv('POSTGRES_DB')
     )
 
