@@ -1,7 +1,7 @@
 from typing import Annotated, Generator
 from sqlmodel import Session
 
-from app.database import engine
+from app.core.database import engine
 
 
 def get_db() -> Generator[Session, None, None]:

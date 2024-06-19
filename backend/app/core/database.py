@@ -8,7 +8,6 @@ from sqlalchemy.orm import sessionmaker
 
 load_dotenv()
 
-
 # SQLALCHEMY_DATABASE_URL = f'postgresql://{DB_USER}:{DB_PASSWORD}@{DB_SERVER}:{DB_PORT}/{DB_NAME}'
 
 def SQLALCHEMY_DATABASE_URI() -> PostgresDsn:
@@ -21,7 +20,7 @@ def SQLALCHEMY_DATABASE_URI() -> PostgresDsn:
         path=os.getenv('POSTGRES_DB')
     )
 
-engine = create_engine(str(SQLALCHEMY_DATABASE_URI))
+engine = create_engine(str(SQLALCHEMY_DATABASE_URI()))
 # SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 Base = declarative_base()
