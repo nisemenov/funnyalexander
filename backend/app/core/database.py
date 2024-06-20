@@ -6,7 +6,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-from app.models import User, Item
+# from app.models import User, Item
 
 load_dotenv()
 
@@ -18,7 +18,7 @@ def SQLALCHEMY_DATABASE_URI() -> PostgresDsn:
         username=os.getenv('POSTGRES_USER'),
         password=os.getenv('POSTGRES_PASSWORD'),
         host=os.getenv('POSTGRES_SERVER'),
-        port=5432,
+        port=5444,
         path=os.getenv('POSTGRES_DB')
     )
 
