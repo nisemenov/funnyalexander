@@ -24,7 +24,6 @@ if config.config_file_name is not None:
 # target_metadata = mymodel.Base.metadata
 
 from app.models import SQLModel
-
 target_metadata = SQLModel.metadata
 
 # other values from the config, defined by the needs of env.py,
@@ -39,7 +38,7 @@ def get_url():
     server = os.getenv('POSTGRES_SERVER')
     port = os.getenv('POSTGRES_PORT')
     db = os.getenv('POSTGRES_DB')
-    return f'postgresql+psycopg2://{user}:{password}@{server}:{port}/{db}'
+    return f'postgresql+psycopg://{user}:{password}@{server}:{port}/{db}'
 
 
 def run_migrations_offline() -> None:
