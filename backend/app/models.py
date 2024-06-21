@@ -4,6 +4,7 @@ from sqlmodel import Field, Relationship, SQLModel
 
 # User
 class UserBase(SQLModel):
+    username: str = Field(unique=True, index=True)
     email: EmailStr = Field(unique=True, index=True, max_length=255)
     is_active: bool = True
     is_superuser: bool = False
