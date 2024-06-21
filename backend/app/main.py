@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.routing import APIRoute
 
 from app.api.main import api_router
+from .core.config import settings
 
 
 # def custom_generate_unique_id(route: APIRoute) -> str:
@@ -9,9 +10,9 @@ from app.api.main import api_router
 
 
 app = FastAPI(
-    # title=settings.PROJECT_NAME,
-    # openapi_url=f"{settings.API_V1_STR}/openapi.json",
+    title=settings.PROJECT_NAME,
+    openapi_url=f'{settings.API_V1_STR}/openapi.json',
     # generate_unique_id_function=custom_generate_unique_id,
 )
 
-app.include_router(api_router)
+app.include_router(api_router, prefix=settings.API_V1_STR)
