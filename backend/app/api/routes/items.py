@@ -1,8 +1,8 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter
 
 from app import crud
 from ..deps import SessionDep
-from app.models import Item, ItemCreate
+from app.models import Item
 
 router = APIRouter()
 

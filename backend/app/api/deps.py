@@ -1,7 +1,7 @@
 from typing import Annotated, Generator
 from fastapi import Depends
 from fastapi.security import OAuth2PasswordBearer
-from sqlmodel import Session
+from sqlalchemy.orm import Session
 
 from app.core.database import engine
 
