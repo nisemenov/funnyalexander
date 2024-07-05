@@ -2,7 +2,7 @@ from fastapi import APIRouter
 
 from app import crud
 from ..deps import SessionDep
-from app.models import Item
+from app.schemas import Item
 
 router = APIRouter()
 

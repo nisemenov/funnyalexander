@@ -15,11 +15,10 @@ class UserCreate(UserBase):
 
 class User(UserBase):
     id: int
-    hashed_password: str
     items: list['Item'] = []
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 # Item
@@ -32,9 +31,18 @@ class ItemCreate(ItemBase):
     pass
 
 
-class Item(ItemBase, table=True):
+class Item(ItemBase):
     id: int
     owner_id: int
     
     class Config:
-        orm_mode = True
+        from_attributes = True
+
+# Token
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
+
+class TokenData(BaseModel):
+    username: str | None = None
