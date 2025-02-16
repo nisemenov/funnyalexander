@@ -23,3 +23,9 @@ test = [
     "pytest>=8.3.4",
     "pytest-django>=4.10.0",
 ]
+
+[tool.mypy]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "funnyalexander.settings"
