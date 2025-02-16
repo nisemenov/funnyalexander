@@ -9,7 +9,17 @@ dependencies = [
     "psycopg2-binary>=2.9.10",
 ]
 
+[tool.uv]
+default-groups = ["lint", "test"]
+
 [dependency-groups]
 lint = [
+    "codespell>=2.4.1",
+    "mypy>=1.15.0",
     "pre-commit>=4.1.0",
+    "ruff>=0.9.6",
+]
+test = [
+    "pytest>=8.3.4",
+    "pytest-django>=4.10.0",
 ]
