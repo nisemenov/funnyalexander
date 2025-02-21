@@ -1,9 +1,13 @@
+import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-SECRET_KEY = "django-insecure-2#lpj%ntx1exed-3+xri+jk8s-5=ifpg!fk)jbh87%$rd9@3y6"
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 DEBUG = True
 
@@ -19,6 +23,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "movies",
+    "users",
 ]
 
 MIDDLEWARE = [
@@ -83,9 +89,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 # Internationalization
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "ru-Ru"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "Europe/Moscow"
 
 USE_I18N = True
 
